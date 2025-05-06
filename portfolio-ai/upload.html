@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Загрузите свои сертификаты и документы для автоматического создания портфолио">
+    <title>Загрузка документов | Конструктор портфолио с ИИ</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/upload.css">
+    <!-- Favicon можно добавить позже -->
+</head>
+<body>
+    <div class="upload-container">
+        <header class="upload-header">
+            <nav aria-label="Навигация по загрузке документов">
+                <a href="../index.html" class="back-link" aria-label="Вернуться на главную страницу">← На главную</a>
+            </nav>
+            <div class="header-content">
+                <h1>Подготовка вашего портфолио</h1>
+                <p class="subtitle">Загрузите свои документы, и наш ИИ поможет создать профессиональное портфолио</p>
+            </div>
+        </header>
+        
+        <main class="upload-main">
+            <form id="uploadForm" class="upload-form" aria-label="Форма загрузки документов">
+                <div class="upload-area" id="dropArea" aria-labelledby="uploadInstructions">
+                    <div class="upload-icon">📁</div>
+                    <p id="uploadInstructions">Перетащите сюда файлы или</p>
+                    <input type="file" id="fileInput" multiple 
+                           accept="image/*,.pdf,.doc,.docx" 
+                           aria-describedby="fileHelp"
+                           class="visually-hidden">
+                    <label for="fileInput" class="btn select-files-btn">
+                        Выбрать файлы на компьютере
+                    </label>
+                    <p id="fileHelp" class="help-text">
+                        Поддерживаются: JPG, PNG, PDF, DOCX (максимум 10 файлов, до 5MB каждый)
+                    </p>
+                    <div class="loading-bar hidden" id="loadingBar">
+                        <div class="progress" id="uploadProgress"></div>
+                    </div>
+                </div>
+                
+                <div id="previewArea" class="preview-area hidden">
+                    <div class="preview-header">
+                        <h2>Выбранные документы <span id="fileCount">(0)</span></h2>
+                        <button type="button" id="clearAllBtn" class="text-btn">Очистить все</button>
+                    </div>
+                    
+                    <div id="filePreviews" class="file-previews" role="list"></div>
+                    
+                    <div class="form-options">
+                        <div class="form-group">
+                            <label for="studentName">Ваше имя:</label>
+                            <input type="text" id="studentName" 
+                                   placeholder="Иванов Иван Иванович"
+                                   aria-label="Введите ваше полное имя">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="portfolioTheme">Стиль оформления:</label>
+                            <select id="portfolioTheme" aria-label="Выберите стиль оформления портфолио">
+                                <option value="modern">Современный</option>
+                                <option value="classic">Классический</option>
+                                <option value="creative">Креативный</option>
+                                <option value="professional">Профессиональный</option>
+                                <option value="minimalist">Минималистичный</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group checkbox-group">
+
+<input type="checkbox" id="includeWatermark" checked
+                                   aria-label="Добавить водяной знак">
+                            <label for="includeWatermark">Добавить водяной знак "Образец"</label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-actions">
+                        <button type="button" id="generateBtn" class="btn generate-btn">
+                            <span class="btn-icon">✨</span> Сгенерировать портфолио
+                        </button>
+                        <p class="generate-hint">Это займет около 1-2 минут</p>
+                    </div>
+                </div>
+            </form>
+            
+            <div class="upload-tips">
+                <h3>Советы по загрузке:</h3>
+                <ul>
+                    <li>Сканируйте документы хорошего качества</li>
+                    <li>Назовите файлы понятно (например, "Диплом_Олимпиада_2024.pdf")</li>
+                    <li>Загружайте только важные достижения</li>
+                    <li>Максимальный размер файла — 5MB</li>
+                </ul>
+            </div>
+        </main>
+
+        <footer class="upload-footer">
+            <p>Индивидуальный проект: "Влияние искусственного интеллекта на общество"</p>
+            <p class="copyright">© 2025 Конструктор портфолио с ИИ. Все права защищены.</p>
+            <p class="author">Разработано: Завадовский Степан Алексеевич, ученик 10 класса</p>
+        </footer>
+    </div>
+
+    <script src="../js/script.js"></script>
+    <script src="../js/upload.js"></script>
+</body>
+</html>

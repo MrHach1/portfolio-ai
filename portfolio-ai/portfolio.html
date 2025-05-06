@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Автоматически сгенерированное портфолио с использованием искусственного интеллекта">
+    <title>Ваше портфолио | Конструктор портфолио с ИИ</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/portfolio.css">
+    <!-- Favicon можно добавить позже -->
+</head>
+<body>
+    <div class="portfolio-container">
+        <header class="portfolio-header">
+            <nav aria-label="Навигация по портфолио" class="portfolio-nav">
+                <a href="../index.html" class="back-link" aria-label="Вернуться на главную страницу">← На главную</a>
+                <button id="editPortfolioBtn" class="edit-btn" aria-label="Редактировать портфолио">✏️ Редактировать</button>
+            </nav>
+            <div class="portfolio-header-content">
+                <h1>Моё портфолио</h1>
+                <h2 id="studentName">Иванов Иван Иванович</h2>
+                <p id="aboutText">Ученик 10 класса, школа №9 г. Холмска</p>
+                <p class="generation-info">Автоматически сгенерировано с помощью Конструктора портфолио с ИИ</p>
+            </div>
+        </header>
+        
+        <main class="portfolio-content">
+            <section id="education" class="portfolio-section" aria-labelledby="education-heading">
+                <div class="section-header">
+                    <h2 id="education-heading">Образование</h2>
+                    <button class="section-toggle" aria-expanded="true" aria-controls="educationDocs">Свернуть</button>
+                </div>
+                <div class="documents-grid" id="educationDocs" role="list">
+                    <!-- Документы будут добавлены через JavaScript -->
+                    <div class="empty-message">Нет документов об образовании</div>
+                </div>
+            </section>
+            
+            <section id="achievements" class="portfolio-section" aria-labelledby="achievements-heading">
+                <div class="section-header">
+                    <h2 id="achievements-heading">Мои достижения</h2>
+                    <button class="section-toggle" aria-expanded="true" aria-controls="achievementsDocs">Свернуть</button>
+                </div>
+                <div class="documents-grid" id="achievementsDocs" role="list">
+                    <!-- Документы будут добавлены через JavaScript -->
+                    <div class="empty-message">Нет документов о достижениях</div>
+                </div>
+            </section>
+            
+            <section id="projects" class="portfolio-section" aria-labelledby="projects-heading">
+                <div class="section-header">
+                    <h2 id="projects-heading">Мои проекты</h2>
+                    <button class="section-toggle" aria-expanded="true" aria-controls="projectsDocs">Свернуть</button>
+                </div>
+                <div class="documents-grid" id="projectsDocs" role="list">
+                    <!-- Документы будут добавлены через JavaScript -->
+                    <div class="empty-message">Нет документов о проектах</div>
+                </div>
+            </section>
+            
+            <section id="other" class="portfolio-section" aria-labelledby="other-heading">
+                <div class="section-header">
+                    <h2 id="other-heading">Прочие документы</h2>
+                    <button class="section-toggle" aria-expanded="true" aria-controls="otherDocs">Свернуть</button>
+                </div>
+                <div class="documents-grid" id="otherDocs" role="list">
+                    <!-- Документы будут добавлены через JavaScript -->
+                    <div class="empty-message">Нет других документов</div>
+
+</div>
+            </section>
+        </main>
+        
+        <footer class="portfolio-footer">
+            <div class="footer-actions">
+                <button id="downloadPdfBtn" class="btn download-btn" aria-label="Скачать портфолио в PDF">
+                    <span class="icon">📄</span> Скачать PDF
+                </button>
+                <button id="printPortfolioBtn" class="btn print-btn" aria-label="Распечатать портфолио">
+                    <span class="icon">🖨</span> Печать
+                </button>
+            </div>
+            <p class="footer-info">Портфолио сгенерировано с помощью Конструктора портфолио с ИИ</p>
+            <p class="footer-date">Дата создания: <span id="generationDate">05 мая 2025 г.</span></p>
+        </footer>
+    </div>
+
+    <!-- Подключение скриптов -->
+    <script src="../js/portfolio.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script>
+        // Инициализация будет в portfolio.js
+        window.jsPDF = window.jspdf.jsPDF;
+    </script>
+</body>
+</html>
